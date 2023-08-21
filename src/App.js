@@ -97,12 +97,22 @@ function App() {
           </div>
         ) : (
           <div className="question-card">
-            <h2>Question 1 out of 7</h2>
-            <h3>I see myself as a succesfull person.</h3>
+            <h2>
+              Question {currentQuestion + 1} out of {questions.length}
+            </h2>
+            <h3>{questions[currentQuestion].text}</h3>
             <ul>
-              <li>never</li>
-              <li>rarely</li>
-              <li>often</li>
+              {questions[currentQuestion].options.map((option) => {
+                return (
+                  <li
+                    onClick={() => optionClicked(option.isCorrect)}
+                    key={option.id}
+                  >
+                    {" "}
+                    {option.text}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}
