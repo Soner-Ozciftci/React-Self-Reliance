@@ -11,6 +11,10 @@ function App() {
     <div className="App">
 <div className='container'>
 <h1>Self Reliance App</h1>
+<h2>Current Score :2</h2>
+<div className='question-card'>
+<h2>Question 1 out of 7</h2>
+</div>
 </div>
     </div>
   );
