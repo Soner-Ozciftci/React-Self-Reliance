@@ -86,14 +86,17 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Self Reliance App</h1>
-        <h2>Current Score :{score}</h2>
+        <h1>Self Reliance Test</h1>
+        <h2>Current Score : {score}</h2>
 
         {showFinalResult ? (
           <div className="result">
             <h1>Result</h1>
-            <h2>1 out of 7 self confident</h2>
-            <button>Restart Test</button>
+            <h2>
+              {score} out of {questions.length} you are -{" "}
+              {(score / questions.length) * 100}% - self-confident
+            </h2>
+            <button onClick={() => restartGame()}>Restart Test</button>
           </div>
         ) : (
           <div className="question-card">
@@ -108,7 +111,6 @@ function App() {
                     onClick={() => optionClicked(option.isCorrect)}
                     key={option.id}
                   >
-                    {" "}
                     {option.text}
                   </li>
                 );
