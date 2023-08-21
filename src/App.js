@@ -21,6 +21,13 @@ function App() {
   <li>often</li>
 </ul>
 </div>
+<div className='result'>
+  <h1>Result</h1>
+  <h2>
+    1 out of 7 self confident
+  </h2>
+  <button>Restart Test</button>
+</div>
 </div>
     </div>
   );
